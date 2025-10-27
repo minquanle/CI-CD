@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: securing-web:latest
+    container_name: securing-web
+    environment:
+      - SPRING_PROFILES_ACTIVE=noauth
+    ports:
+      - "8085:8085"
+    restart: unless-stopped
+
